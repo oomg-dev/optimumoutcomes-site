@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Optimum Outcomes Management Group</title>
+<meta name="description" content="Communication training and coaching for teams and the people who lead them. Crucial conversations, emotional intelligence, motivational interviewing, and Plan-Do-Study-Act.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1f2a2e;
+    --muted: #55636a;
+    --paper: #faf8f4;
+    --panel: #f1ede4;
+    --accent: #2f6b5e;
+    --accent-dark: #22503f;
+    --rule: #ddd6c8;
+    --max: 1040px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 17px/1.65 "Inter", system-ui, sans-serif;
+  }
+  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.2; margin: 0 0 .5em; }
+  h1 { font-size: clamp(2.1rem, 5vw, 3.3rem); }
+  h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+  h3 { font-size: 1.2rem; }
+  p { margin: 0 0 1em; }
+  a { color: var(--accent); }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  section { padding: 72px 0; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; font-weight: 600; color: var(--accent); margin-bottom: .8em; }
+
+  /* header */
+  header { border-bottom: 1px solid var(--rule); background: var(--paper); position: sticky; top: 0; z-index: 10; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+  nav a { color: var(--muted); text-decoration: none; margin-left: 22px; font-size: .95rem; }
+  nav a:hover { color: var(--ink); }
+  @media (max-width: 640px) { nav a:not(.nav-cta) { display: none; } }
+  .nav-cta { color: var(--accent) !important; font-weight: 600; }
+
+  /* hero */
+  .hero { padding: 96px 0 80px; }
+  .hero p.lead { font-size: 1.2rem; color: var(--muted); max-width: 640px; }
+  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; padding: 13px 22px; border-radius: 6px; font-weight: 600; margin-top: 12px; }
+  .btn:hover { background: var(--accent-dark); }
+  .quote { margin-top: 56px; border-left: 3px solid var(--accent); padding-left: 20px; max-width: 640px; }
+  .quote p { font-family: "Fraunces", Georgia, serif; font-size: 1.25rem; margin-bottom: .3em; }
+  .quote span { color: var(--muted); font-size: .9rem; }
+
+  /* approach */
+  .approach { background: var(--panel); }
+  .grid { display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 36px; }
+  .grid h3 { margin-bottom: .35em; }
+  .grid p { color: var(--muted); margin: 0; }
+
+  /* services */
+  .services .grid > div { border-top: 2px solid var(--accent); padding-top: 18px; }
+
+  /* people */
+  .people .grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+  .people ul { padding-left: 1.1em; color: var(--muted); margin: 0 0 1em; }
+
+  /* contact */
+  .contact { background: var(--ink); color: #f4f1ea; }
+  .contact h2 { color: #fff; }
+  .contact p { color: #c9cfd1; max-width: 600px; }
+  .contact a { color: #9fd3c3; }
+  .contact .btn { background: #9fd3c3; color: var(--ink); }
+  .contact .btn:hover { background: #fff; }
+  .contact-lines { margin-top: 28px; font-size: 1.05rem; }
+
+  footer { background: var(--ink); color: #8a979c; font-size: .85rem; padding: 24px 0 36px; border-top: 1px solid #33444a; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Optimum Outcomes</a>
+    <nav>
+      <a href="#approach">Approach</a>
+      <a href="#services">What we do</a>
+      <a href="#people">Who we are</a>
+      <a class="nav-cta" href="#contact">Talk with us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Optimum Outcomes Management Group</div>
+      <h1>Better conversations.<br>Stronger teams.</h1>
+      <p class="lead">We train and coach teams and the people who lead them. The work is practical: how to have the hard conversation, how to hold each other accountable, and how to understand someone who sees the world differently than you do.</p>
+      <a class="btn" href="#contact">Start a conversation</a>
+
+      <div class="quote">
+        <p>"Successful communication is a function of how invested you are in perceiving the other person's point of view."</p>
+        <span>James Perry, founder</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="approach" id="approach">
+    <div class="wrap">
+      <div class="eyebrow">How we work</div>
+      <h2>We ask before we tell.</h2>
+      <p>Our sessions are built around stories, activities, and the situations your people actually face. Less lecture, more practice.</p>
+      <div class="grid">
+        <div>
+          <h3>Meet people where they are</h3>
+          <p>No shaming, no blaming. People have reasons for their choices. We start there.</p>
+        </div>
+        <div>
+          <h3>Make it practical</h3>
+          <p>Every session includes a story or an activity. You leave with something you can use on Monday.</p>
+        </div>
+        <div>
+          <h3>Every generation in the room</h3>
+          <p>Boomers, Gen X, millennials, and Gen Z see work, feedback, and self-care differently. That lens runs through everything we teach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="eyebrow">What we do</div>
+      <h2>Training and coaching</h2>
+      <p>For corporate teams, small businesses, and public agencies. Every program is shaped around your group.</p>
+      <div class="grid">
+        <div>
+          <h3>Crucial conversations and accountability</h3>
+          <p>Handle difficult discussions with confidence and build a team where people own their part.</p>
+        </div>
+        <div>
+          <h3>Emotional intelligence</h3>
+          <p>Assess, practice, and grow the self-awareness and empathy that help people lead through pressure.</p>
+        </div>
+        <div>
+          <h3>Motivational interviewing</h3>
+          <p>Understand what drives people by asking better questions instead of giving more answers.</p>
+        </div>
+        <div>
+          <h3>Communicating across generations</h3>
+          <p>Close the gaps between age groups, backgrounds, and work styles so every voice gets heard.</p>
+        </div>
+        <div>
+          <h3>Impact evaluation with Plan-Do-Study-Act</h3>
+          <p>Find out what is working, test what could work better, and measure the change.</p>
+        </div>
+        <div>
+          <h3>Coaching through stagnation</h3>
+          <p>One-on-one and team coaching for people who feel stuck. Move from a fixed mindset toward a growth mindset, one small step at a time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="people" id="people">
+    <div class="wrap">
+      <div class="eyebrow">Who we are</div>
+      <h2>Practitioners, not presenters</h2>
+      <div class="grid">
+        <div>
+          <h3>James Perry, Founder</h3>
+          <p>James spent 21 years as a Probation and Parole Officer with the Virginia Department of Corrections in Fairfax County. Before that he worked in juvenile delinquency counseling, substance abuse counseling, and juvenile group home administration in Washington, D.C. He holds a psychology degree from Northwestern University.</p>
+          <p>He is a Certified Workforce Development Professional, certified by the National Institute of Corrections to train in:</p>
+          <ul>
+            <li>Evidence-based practices</li>
+            <li>Team building</li>
+            <li>Cultural diversity</li>
+            <li>Multi-generation communication</li>
+            <li>Cognitive restructuring</li>
+          </ul>
+          <p>He co-developed a recidivism prevention program and co-sponsors the annual Multi-Cultural Forum in Fairfax County. He has trained staff for corrections and juvenile justice agencies in Virginia and Maryland.</p>
+        </div>
+        <div>
+          <h3>Susan Conner, Training Partner</h3>
+          <p>Susan works in evidence-based practices and brings years of experience with motivational interviewing, feedback, and self-care. She partners with James on program design and delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Let's talk about your team.</h2>
+      <p>Tell us what's going on. We'll ask some questions, listen, and tell you honestly whether we're a fit.</p>
+      <a class="btn" href="mailto:Jperry@optimumoutcomes.com?subject=Training%20inquiry">Email James</a>
+      <div class="contact-lines">
+        <p><a href="mailto:Jperry@optimumoutcomes.com">Jperry@optimumoutcomes.com</a><br>
+        <a href="tel:+12403051022">240-305-1022</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">Optimum Outcomes Management Group, LLC</div>
+</footer>
+
+</body>
+</html>
