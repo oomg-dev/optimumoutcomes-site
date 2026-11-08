@@ -4,7 +4,7 @@ One-page site for Optimum Outcomes Management Group, served by GitHub Pages.
 
 ## Files
 - `index.html` is the whole site. Text, layout, and styles live in this one file.
-- `CNAME` tells GitHub Pages the custom domain (www.optimumoutcomes.com).
+- `CNAME` (removed during review) tells GitHub Pages the custom domain. Add it back, containing `www.optimumoutcomes.com`, right before the DNS cutover. While it exists, the github.io preview address redirects to the custom domain.
 - `.nojekyll` tells GitHub to serve the files as-is.
 
 ## Turn on Pages
