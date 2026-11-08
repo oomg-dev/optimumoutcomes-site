@@ -5,18 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Optimum Outcomes Management Group</title>
 <meta name="description" content="Communication training and coaching for teams and the people who lead them. Crucial conversations, emotional intelligence, motivational interviewing, and Plan-Do-Study-Act.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1f2a2e;
-    --muted: #55636a;
-    --paper: #faf8f4;
-    --panel: #f1ede4;
-    --accent: #2f6b5e;
-    --accent-dark: #22503f;
-    --rule: #ddd6c8;
+    --ink: #141414;
+    --muted: #55534e;
+    --paper: #fbfaf7;
+    --panel: #f3efe6;
+    --gold: #b2811a;
+    --accent: #8a6210;
+    --accent-dark: #141414;
+    --rule: #e2dccf;
     --max: 1040px;
   }
   * { box-sizing: border-box; }
@@ -27,7 +30,7 @@
     color: var(--ink);
     font: 17px/1.65 "Inter", system-ui, sans-serif;
   }
-  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.2; margin: 0 0 .5em; }
+  h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; font-weight: 600; line-height: 1.2; margin: 0 0 .5em; }
   h1 { font-size: clamp(2.1rem, 5vw, 3.3rem); }
   h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
   h3 { font-size: 1.2rem; }
@@ -39,8 +42,9 @@
 
   /* header */
   header { border-bottom: 1px solid var(--rule); background: var(--paper); position: sticky; top: 0; z-index: 10; }
-  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  .brand { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand { display: block; line-height: 0; }
+  .brand img { height: 52px; width: auto; }
   nav a { color: var(--muted); text-decoration: none; margin-left: 22px; font-size: .95rem; }
   nav a:hover { color: var(--ink); }
   @media (max-width: 640px) { nav a:not(.nav-cta) { display: none; } }
@@ -49,10 +53,10 @@
   /* hero */
   .hero { padding: 96px 0 80px; }
   .hero p.lead { font-size: 1.2rem; color: var(--muted); max-width: 640px; }
-  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; padding: 13px 22px; border-radius: 6px; font-weight: 600; margin-top: 12px; }
-  .btn:hover { background: var(--accent-dark); }
-  .quote { margin-top: 56px; border-left: 3px solid var(--accent); padding-left: 20px; max-width: 640px; }
-  .quote p { font-family: "Fraunces", Georgia, serif; font-size: 1.25rem; margin-bottom: .3em; }
+  .btn { display: inline-block; background: var(--ink); color: #fff; text-decoration: none; padding: 13px 22px; border-radius: 6px; font-weight: 600; margin-top: 12px; }
+  .btn:hover { background: var(--accent); }
+  .quote { margin-top: 56px; border-left: 3px solid var(--gold); padding-left: 20px; max-width: 640px; }
+  .quote p { font-family: "Playfair Display", Georgia, serif; font-size: 1.25rem; margin-bottom: .3em; }
   .quote span { color: var(--muted); font-size: .9rem; }
 
   /* approach */
@@ -62,7 +66,7 @@
   .grid p { color: var(--muted); margin: 0; }
 
   /* services */
-  .services .grid > div { border-top: 2px solid var(--accent); padding-top: 18px; }
+  .services .grid > div { border-top: 2px solid var(--gold); padding-top: 18px; }
 
   /* people */
   .people .grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
@@ -71,20 +75,20 @@
   /* contact */
   .contact { background: var(--ink); color: #f4f1ea; }
   .contact h2 { color: #fff; }
-  .contact p { color: #c9cfd1; max-width: 600px; }
-  .contact a { color: #9fd3c3; }
-  .contact .btn { background: #9fd3c3; color: var(--ink); }
-  .contact .btn:hover { background: #fff; }
+  .contact p { color: #cfcac0; max-width: 600px; }
+  .contact a { color: #d9a93f; }
+  .contact .btn { background: #d9a93f; color: var(--ink); }
+  .contact .btn:hover { background: #fff; color: var(--ink); }
   .contact-lines { margin-top: 28px; font-size: 1.05rem; }
 
-  footer { background: var(--ink); color: #8a979c; font-size: .85rem; padding: 24px 0 36px; border-top: 1px solid #33444a; }
+  footer { background: var(--ink); color: #8f8a80; font-size: .85rem; padding: 24px 0 36px; border-top: 1px solid #333; }
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <a class="brand" href="#top">Optimum Outcomes</a>
+    <a class="brand" href="#top"><img src="assets/oomg-logo.png" alt="Optimum Outcomes Management Group" width="130" height="52"></a>
     <nav>
       <a href="#approach">Approach</a>
       <a href="#services">What we do</a>
