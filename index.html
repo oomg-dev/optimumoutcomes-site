@@ -79,7 +79,22 @@
   .contact a { color: #d9a93f; }
   .contact .btn { background: #d9a93f; color: var(--ink); }
   .contact .btn:hover { background: #fff; color: var(--ink); }
-  .contact-lines { margin-top: 28px; font-size: 1.05rem; }
+  .request-form { margin-top: 36px; background: var(--paper); color: var(--ink); border-radius: 6px; padding: 32px; max-width: 720px; scroll-margin-top: 90px; }
+  .request-form label { display: block; font-size: .92rem; font-weight: 500; margin-bottom: 18px; }
+  .request-form .opt { color: var(--muted); font-weight: 400; }
+  .request-form input, .request-form select, .request-form textarea {
+    display: block; width: 100%; margin-top: 6px; padding: 12px 14px; font: inherit; font-size: 16px;
+    color: var(--ink); background: #fff; border: 1px solid var(--rule); border-radius: 4px;
+  }
+  .request-form input:focus, .request-form select:focus, .request-form textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: var(--gold); }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+  .request-form button { border: 0; cursor: pointer; font: inherit; font-weight: 600; margin-top: 4px; }
+  .contact .request-form .btn { background: var(--ink); color: #fff; }
+  .contact .request-form .btn:hover { background: var(--accent); color: #fff; }
+  .request-form button:disabled { opacity: .6; cursor: wait; }
+  .form-status { margin: 14px 0 0; color: var(--muted) !important; min-height: 1.5em; }
+  .hp { position: absolute; left: -9999px; }
+  @media (max-width: 560px) { .request-form { padding: 24px 18px; } .field-row { grid-template-columns: 1fr; } }
 
   footer { background: var(--ink); color: #8f8a80; font-size: .85rem; padding: 24px 0 36px; border-top: 1px solid #333; }
 </style>
@@ -179,15 +194,12 @@
           <h3>James Perry, Founder</h3>
           <p>James spent 21 years as a Probation and Parole Officer with the Virginia Department of Corrections in Fairfax County. Before that he worked in juvenile delinquency counseling, substance abuse counseling, and juvenile group home administration in Washington, D.C. He holds a psychology degree from Northwestern University.</p>
           <p>He is a Certified Workforce Development Professional, certified by the National Institute of Corrections to train in:</p>
-          <br>
           <ul>
-           <p>  
             <li>Evidence-based practices</li>
             <li>Team building</li>
             <li>Cultural diversity</li>
             <li>Multi-generation communication</li>
             <li>Cognitive restructuring</li>
-           </p>   
           </ul>
           <p>He co-developed a recidivism prevention program and co-sponsors the annual Multi-Cultural Forum in Fairfax County. He has trained staff for corrections and juvenile justice agencies in Virginia and Maryland.</p>
         </div>
@@ -205,11 +217,33 @@
     <div class="wrap">
       <h2>Let's talk about your team.</h2>
       <p>Tell us what's going on. We'll ask some questions, listen, and tell you honestly whether we're a fit.</p>
-      <a class="btn" href="mailto:Jperry@optimumoutcomes.com?subject=Training%20inquiry">Email James</a>
-      <div class="contact-lines">
-        <p><a href="mailto:Jperry@optimumoutcomes.com">Jperry@optimumoutcomes.com</a><br>
-        <a href="tel:+12403051022">240-305-1022</a></p>
-      </div>
+      <form id="request" class="request-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+        <input type="hidden" name="subject" value="New inquiry from the Optimum Outcomes website">
+        <input type="hidden" name="from_name" value="Optimum Outcomes website">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field-row">
+          <label>Name<input type="text" name="name" required autocomplete="name"></label>
+          <label>Email<input type="email" name="email" required autocomplete="email"></label>
+        </div>
+        <label>Organization <span class="opt">(optional)</span><input type="text" name="organization" autocomplete="organization"></label>
+        <label>What can we help with?
+          <select name="request_type" required>
+            <option value="" disabled selected>Pick one</option>
+            <option>Training for my team</option>
+            <option>Crucial conversations and accountability</option>
+            <option>Emotional intelligence</option>
+            <option>Communicating across generations</option>
+            <option>One-on-one coaching</option>
+            <option>Impact evaluation (Plan-Do-Study-Act)</option>
+            <option>Just a question</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>Tell us a little about it<textarea name="message" rows="5" required placeholder="Who's on your team, what's getting in the way, and any timeline you're working with."></textarea></label>
+        <button type="submit" class="btn">Send</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 
@@ -219,5 +253,29 @@
   <div class="wrap">Optimum Outcomes Management Group, LLC</div>
 </footer>
 
+<script>
+(function () {
+  var form = document.getElementById("request");
+  if (!form) return;
+  var status = form.querySelector(".form-status");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (form.access_key.value.indexOf("YOUR_") === 0) {
+      status.textContent = "This form isn't connected yet. Check back soon.";
+      return;
+    }
+    var btn = form.querySelector("button");
+    btn.disabled = true; status.textContent = "Sending...";
+    fetch(form.action, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(form) })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d.success) { form.reset(); status.textContent = "Got it. We'll be in touch soon."; }
+        else { status.textContent = "Something went wrong. Please try again in a bit."; }
+      })
+      .catch(function () { status.textContent = "Something went wrong. Please try again in a bit."; })
+      .finally(function () { btn.disabled = false; });
+  });
+})();
+</script>
 </body>
 </html>
